@@ -1,0 +1,58 @@
+:root{
+    --black: rgb(30 ,30 ,30);
+    --whiete: rgb(200 ,200 ,200);
+
+}
+
+body{
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    row-gap: 10px;
+    background-color: var(--black);
+    color: var(--whiete);
+    font-size: 25px;
+}
+
+table{
+    border: 1px solid var(--whiete);
+    padding: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn{
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    height: 30px;
+    border: 1px solid var(--whiete);
+    background-color: var(--black);
+    color: var(--whiete);
+}
+.btn:hover{
+    cursor: pointer;
+}
+
+table tr td{
+    display: flex;
+    align-items: center;
+}
+
+#passwd{
+    min-height: 30px;
+    min-width: 300px;
+    max-width: 300px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid var(--whiete);
+    padding: 5px;
+    word-break: break-all;
+    letter-spacing: 5px;
+}
+
+#passwd_lenght{
+    width: 40px;
+}

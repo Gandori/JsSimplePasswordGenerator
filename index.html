@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js"></script>
+</head>
+
+<body>
+    
+    <table>
+
+        <tr>
+            <td>
+                <input type="checkbox" id="upper_letters">
+                <label for="upper_letters">upper_letters</label>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <input type="checkbox" id="numbers">
+                <label for="numbers">numbers</label>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <input type="checkbox" id="punctuation">
+                <label for="punctuation ">punctuation</label>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <input id="passwd_lenght" type="number" value="8" min="8" max="">
+                <label for="passwd_lenght">passwd_lenght</label>
+            </td>
+        </tr>
+    </table>
+
+    <button class="btn" onclick="generat_passwd()">generate</button>
+
+    <button class="btn" onclick="copy()">copy</button>
+
+    <div id="passwd"></div>
+
+</body>
+</html>
