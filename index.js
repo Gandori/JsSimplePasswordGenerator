@@ -1,33 +1,66 @@
+const dic = ["abcdefghijklmnopqrstuvwxyz"];
+
 function generat_passwd(){
-    const dic = []
-    const passwd_lenght = document.getElementById("passwd_lenght").value
-    var passwd = ""
+    const passwd_lenght = document.getElementById("passwd_lenght").value;
+    var passwd = "";
 
+    console.log(dic);
 
-    const upper_letters = document.getElementById("upper_letters")
-    if (upper_letters.checked == true) dic.push("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
-    if (upper_letters.checked == false) dic.pop("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
-
-    const numbers = document.getElementById("numbers")
-    if (numbers.checked == true) dic.push("123456789");
-    if (numbers.checked == false) dic.pop("123456789");
-
-    const punctuation = document.getElementById("punctuation")
-    if (punctuation.checked == true) dic.push("!§$%&/()=?{}[]");
-    if (punctuation.checked == false) dic.pop("!§$%&/()=?{}[]");
-
-    dic.push("abcdefghijklmnopqrstuvwxyz");
     for (let i = 0; i < +passwd_lenght; i++){
-        let index = dic[Math.floor(Math.random() * dic.length)]
+        let index = dic[Math.floor(Math.random() * dic.length)];
      
-        passwd = passwd + index[Math.floor(Math.random() * index.length)] 
+        passwd = passwd + index[Math.floor(Math.random() * index.length)];
     }
 
-    document.getElementById("passwd").innerHTML = passwd
+    document.getElementById("passwd").innerHTML = passwd;
 }
 
+const letters_label = document.getElementById("upper_letters");
+letters_label.addEventListener("change" ,() => {
+    const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    switch (letters_label.checked) {
+        case true:
+            console.log(true);
+            dic.push(letters);
+            break;
+    
+        case false:
+            dic.pop(letters);
+            break;
+    }
+})
+
+
+const numbers_label = document.getElementById("numbers");
+numbers_label.addEventListener("change" ,() => {
+    const numbers = "123456789";
+    switch (numbers_label.checked) {
+        case true:
+            dic.push(numbers);
+            break;
+    
+        case false:
+            dic.pop(numbers);
+            break;
+    }
+})
+
+const punctuation_label = document.getElementById("punctuation");
+punctuation_label.addEventListener("change" ,() => {
+    const punctuation = "!§$%&/()=?{}[]";
+    switch (punctuation_label.checked) {
+        case true:
+            dic.push(punctuation);
+            break;
+    
+        case false:
+            dic.pop(punctuation);
+            break;
+    }
+})
+
 function copy() {
-    const text = document.getElementById("passwd").innerHTML
+    const text = document.getElementById("passwd").innerHTML;
     if (text != ""){
         navigator.clipboard.writeText(text);
         alert("Copied the text: " + text);
