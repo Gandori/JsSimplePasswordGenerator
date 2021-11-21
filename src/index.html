@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>password generator</title>
+
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <head>
+        <h1>Password Generator</h1>
+        <h4>by Gandori</h4>
+    </head>
+
+    <main class="main">
+         <div>
+             <input type="checkbox" name="checkbox" id="upper_letters">
+            <label for="upper_letters">upper_letters</label>
+         </div>   
+
+         <div>
+            <input type="checkbox" name="checkbox" id="numbers">
+            <label for="numbers">numbers</label>
+         </div>
+
+         <div>
+            <input type="checkbox" name="checkbox" id="punctuation">
+            <label for="punctuation">punctuation</label>
+         </div>
+
+         <div>
+             <input type="number" value="8" min="8" max="50" id="pwd_lenght">
+             <label for="lenght">lenght</label>
+         </div>
+
+         <button onclick="generate()">generate</button>
+
+    </main>
+
+    <footer class="footer">
+        <h3>Password</h3>
+        <label for="password" id="password"></label>
+        <button onclick="copy()">copie</button>
+    </footer>
+
+</body>
+<script src="index.js"></script>
+</html>
