@@ -1,2 +1,2 @@
-# js_simple_passwd_generator
+# simple password generator with html/css/javascript
  
