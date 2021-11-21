@@ -1,66 +1,40 @@
-const dic = ["abcdefghijklmnopqrstuvwxyz"];
+generate();
+document.getElementById("upper_letters").addEventListener("change" ,() => {generate()});
+document.getElementById("numbers").addEventListener("change" ,() => {generate()});
+document.getElementById("punctuation").addEventListener("change" ,() => {generate()});
+document.getElementById("pwd_lenght").addEventListener("change" ,() => {generate()});
 
-function generat_passwd(){
-    const passwd_lenght = document.getElementById("passwd_lenght").value;
-    var passwd = "";
+function generate(){
+    const password_label = document.getElementById("password");
+    const password_lenght = document.getElementById("pwd_lenght");
+    
+    var password = "";
 
-    console.log(dic);
+    var dic = ["abcdefghijklmnopqrstuvwxyz"];
+    const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const numbers = "123456789";
+    const punctuation = "!§$%&/()=?{}[]";
 
-    for (let i = 0; i < +passwd_lenght; i++){
-        let index = dic[Math.floor(Math.random() * dic.length)];
-     
-        passwd = passwd + index[Math.floor(Math.random() * index.length)];
+    if (document.getElementById("upper_letters").checked){
+        dic.push(letters);
+    }
+    if (document.getElementById("numbers").checked){
+        dic.push(numbers);
+    }
+    if (document.getElementById("punctuation").checked){
+        dic.push(punctuation);
+    }    
+
+    for (let i = 0; i < password_lenght.value; i++){
+        let index = dic[Math.floor(Math.random() * dic.length)];        
+        password = password + index[Math.floor(Math.random() * index.length)];
     }
 
-    document.getElementById("passwd").innerHTML = passwd;
+    password_label.innerHTML = password;
 }
 
-const letters_label = document.getElementById("upper_letters");
-letters_label.addEventListener("change" ,() => {
-    const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    switch (letters_label.checked) {
-        case true:
-            console.log(true);
-            dic.push(letters);
-            break;
-    
-        case false:
-            dic.pop(letters);
-            break;
-    }
-})
-
-
-const numbers_label = document.getElementById("numbers");
-numbers_label.addEventListener("change" ,() => {
-    const numbers = "123456789";
-    switch (numbers_label.checked) {
-        case true:
-            dic.push(numbers);
-            break;
-    
-        case false:
-            dic.pop(numbers);
-            break;
-    }
-})
-
-const punctuation_label = document.getElementById("punctuation");
-punctuation_label.addEventListener("change" ,() => {
-    const punctuation = "!§$%&/()=?{}[]";
-    switch (punctuation_label.checked) {
-        case true:
-            dic.push(punctuation);
-            break;
-    
-        case false:
-            dic.pop(punctuation);
-            break;
-    }
-})
-
 function copy() {
-    const text = document.getElementById("passwd").innerHTML;
+    const text = document.getElementById("password").innerHTML;
     if (text != ""){
         navigator.clipboard.writeText(text);
         alert("Copied the text: " + text);
