@@ -32,11 +32,9 @@
             <label for="punctuation">punctuation</label>
          </div>
 
-         <div>
-             <input type="number" value="8" min="8" max="50" id="pwd_lenght">
-             <label for="lenght">lenght</label>
-         </div>
-
+         <label>Password Lenght</label>
+         <input type="range" value="8" min="8" max="50" id="pwd_lenght" onmousemove="pwd_lenght_change()">
+         <label id="pwd_lenght_label">8</label>
          <button onclick="generate()">generate</button>
 
     </main>

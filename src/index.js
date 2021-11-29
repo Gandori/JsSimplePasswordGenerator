@@ -4,6 +4,12 @@ document.getElementById("numbers").addEventListener("change" ,() => {generate()}
 document.getElementById("punctuation").addEventListener("change" ,() => {generate()});
 document.getElementById("pwd_lenght").addEventListener("change" ,() => {generate()});
 
+function pwd_lenght_change(){
+    const pwd_lenght = document.getElementById("pwd_lenght");
+    var pwd_lenght_label = document.getElementById("pwd_lenght_label");
+    pwd_lenght_label.innerHTML = pwd_lenght.value;
+}
+
 function generate(){
     const password_label = document.getElementById("password");
     const password_lenght = document.getElementById("pwd_lenght");
@@ -40,4 +46,3 @@ function copy() {
         alert("Copied the text: " + text);
     }
 }
-
