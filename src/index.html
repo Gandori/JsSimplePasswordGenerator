@@ -5,46 +5,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>password generator</title>
-
     <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
 
-    <head>
+    <header>
         <h1>Password Generator</h1>
         <h4>by Gandori</h4>
-    </head>
+    </header>
 
-    <main class="main">
-         <div>
-             <input type="checkbox" name="checkbox" id="upper_letters">
-            <label for="upper_letters">upper_letters</label>
-         </div>   
+    <main>
+		<div>
+			<label for="upper_letters">upper_letters</label>
+			<input type="checkbox" name="checkbox" id="upper_letters">
+		</div>   
 
-         <div>
-            <input type="checkbox" name="checkbox" id="numbers">
-            <label for="numbers">numbers</label>
-         </div>
+		<div>
+			<label for="numbers">numbers</label>
+			<input type="checkbox" name="checkbox" id="numbers">
+		</div>
 
-         <div>
-            <input type="checkbox" name="checkbox" id="punctuation">
-            <label for="punctuation">punctuation</label>
-         </div>
+		<div>
+			<label for="punctuation">punctuation</label>
+			<input type="checkbox" name="checkbox" id="punctuation">
+		</div>
 
-         <label>Password Lenght</label>
-         <input type="range" value="8" min="8" max="50" id="pwd_lenght" onmousemove="pwd_lenght_change()">
-         <label id="pwd_lenght_label">8</label>
-         <button onclick="generate()">generate</button>
+			<label>Password lenght</label>
+			<div class="len">
+				<button type="button" onclick="dec_pwd_len()"><</button>
+				<input id="pwd_len" type="number" value="8">	
+				<button type="button" onclick="inc_pwd_len()">></button>
+			</div>
+         <button onclick="generate()" type="button">generate</button>
 
     </main>
 
-    <footer class="footer">
-        <h3>Password</h3>
-        <label for="password" id="password"></label>
-        <button onclick="copy()">copie</button>
+    <footer>
+    	<div id="pwd">dfgergegrfgerge</div>
+        <button onclick="copy_to_clipboard()">copie</button>
     </footer>
 
+	<script src="index.js"></script>
+
 </body>
-<script src="index.js"></script>
 </html>

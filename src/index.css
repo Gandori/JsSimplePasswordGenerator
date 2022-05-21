@@ -1,68 +1,91 @@
 :root{
     --black: rgb(50 ,50 ,50);
-    --whiete: rgb(200 ,200 ,200);
+    --white: rgb(200 ,200 ,200);
+	--font_size: 25px;
 }
-
-html > body{
-    width: 350px;
-    margin-left: auto;
-    margin-right: auto;
+html, body
+{
+	width: 100%;
+	height: 100%;
     background-color: var(--black);
+    display: grid;
+	justify-content: center;
+	overflow-y: scroll;
+}
+body
+{
+	max-width: 500px;
+    margin: 0px;
     color: var(--whiete);
-    font-size: 25px;
+    font-size: var(--font_size);
     text-align: center;
-    padding-top: 100px;
 }
-
-.main{
+h1, h4
+{
+	margin: 0px;
+}
+main
+{
+	border: 2px solid var(--white);
     border-radius: 10px;
-    border-style: solid;
-    border-color: var(--whiete);
-    border-width: 3px;
-    padding: 15px;
+    padding: 10px;
     display: grid;
-    row-gap: 10px;
+    grid-gap: 10px;
+	justify-content: center;
 }
-
-.main > div{
+main > div
+{
     display: flex;
-    margin-right: auto;
-    margin-left: auto;
+    flex-direction: row;
 }
-
-.main > div > label{
+main > div > label
+{
     color: var(--whiete);
-    width: 200px;
+	min-width: 80%;
     text-align: left;
-    margin-left: 5px;
 }
-
-.main > div > input{
-    width: 25px;
-    height: 25px;
+main > div > input
+{
+	width: 20%;
+	font-size: var(--font_size);
 }
-
-.footer{
-    display: grid;
-    row-gap: 15px;
+footer
+{
+	width: calc(100% - 4px);
+	display: grid;
+	padding: 2px;
 }
-
-.footer > label{
-    min-width: 350px;
-    max-width: 350px;
-    min-height: 40px;
-    background-color: var(--whiete);
-    color: black;
-    word-break: break-all;
-    padding: 5px;
-    border-radius: 5px;
+footer > #pwd
+{
+	width: calc(100% - 4px);
+	min-height: 80px;
+	word-break: break-all;
+	overflow-y: scroll;
+	border: 2px solid var(--white);
+	border-radius: 5px;
 }
-
-html button{
-    padding: 15px;
-    cursor: pointer;
-    border-radius: 10px;
-    border-style: none;
-    background-color: var(--whiete);
-    color: var(--black);
+button
+{
+	min-width: 200px;
+	min-height: calc(var(--font_size) + 20px);
+	font-size: var(--font_size);
+	margin: auto;
+}
+.len
+{
+	width: 100%;
+	height: 50px;
+}
+.len #pwd_len
+{
+	min-width: 50%;
+	height: 100%;
+	text-align: center;
+	-moz-appearance: textfield;
+}
+.len > button
+{
+	min-width: 20%;
+	height: 100%;
+	margin-top: 3px;
 }
