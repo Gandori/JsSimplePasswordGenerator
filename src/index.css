@@ -16,7 +16,7 @@ body
 {
 	max-width: 500px;
     margin: 0px;
-    color: var(--whiete);
+    color: var(--white);
     font-size: var(--font_size);
     text-align: center;
 }
@@ -40,7 +40,6 @@ main > div
 }
 main > div > label
 {
-    color: var(--whiete);
 	min-width: 80%;
     text-align: left;
 }
